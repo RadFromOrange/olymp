@@ -1,0 +1,171 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic.min.js"></script>
+<style>
+.olympic{
+
+background-color:#3474b5
+}
+</style>
+
+<script>function zdar(){
+$('.menu .item')
+  .tab()
+;
+}
+
+function showModal(){
+$('.ui.modal')
+  .modal('show')
+;
+
+}
+function closeModal(){
+$('.ui.modal')
+  .modal('hide')
+;
+
+}
+
+function setConfigUrl(){
+var url1 = $('#urlsignature').val() ;
+var url2 = $('#urlmessagerie').val() ;
+var url3 = $('#urlvisio').val() ;
+
+$('#iframe1').attr('src', url1) ;
+$('#iframe2').attr('src', url2) ;
+$('#iframe3').attr('src', url3) ;
+}
+
+function gotoTab(tab){
+$('#'+tab).click();
+setConfigUrl();
+}
+
+</script>
+</head>
+
+
+<body onload='zdar()'>
+
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Configuration des urls
+  </div>
+  <div class="content">
+  
+<div class="ui input" >
+<div class="ui form" style='width:800px'>
+        <div class="field">
+          <label>URL SIGNATURE</label>
+          <div class="ui left icon input">
+            <input id="urlsignature"  type="text" >
+          </div>
+        </div>
+        <div class="field">
+          <label>URL MESSAGERIE</label>
+          <div class="ui left icon input">
+            <input id="urlmessagerie" type="text" style='width:auto'>
+          </div>
+        </div>
+		
+		        <div class="field">
+          <label>URL VISIO</label>
+          <div class="ui left icon input">
+            <input  id="urlvisio"  type="text" style='width:auto' >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+
+    <div class="ui button" onclick='closeModal()'>OK</div>
+  </div>
+</div>
+
+    
+  
+    <div class="ui grid">
+  
+  
+  <div class="sixteen wide column olympic">
+    <div class="ui  inverted menu ">
+    <div class="ui container">
+      <a href="#" class="item">OLYMPIC </a>
+      
+    </div>
+  </div>
+
+  
+  </div>
+
+  
+  
+  
+
+  
+  
+
+  
+
+  <div class="two wide column olympic">
+  <h2>UPTOME<h2>
+  <div class="ui inverted vertical menu visible">
+    <a class="item" onclick="gotoTab('first')">
+      Signature electronique
+    </a>
+    <a class="item" onclick="gotoTab('second')">
+      Messagerie securise
+    </a>
+    <a class="item" onclick="gotoTab('third')">
+      Visio
+    </a>
+	
+	    <a class="item" onclick="showModal()">
+      Configuration
+    </a>
+  </div>
+  </div>
+  <div class="one wide column olympic"></div>
+  <div class="thirteen wide column">
+  
+      <div class="ui main container">
+<div class="ui top attached tabular menu">
+  <a class="item" id="first" data-tab="first">First</a>
+  <a class="item" id="second" data-tab="second">Second</a>
+  <a class="item" id="third" active" data-tab="third">Third</a>
+</div>
+<div class="ui bottom attached tab segment" data-tab="first">
+  <iframe id="iframe1" height="100%" width="100%" src="" frameborder="0"  allowfullscreen></iframe>
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+  <iframe  id="iframe2" src="" height="100%" width="100%" frameborder="0" ></iframe>
+</div>
+<div class="ui bottom attached tab segment active" data-tab="third" frameborder="0">
+  <iframe id="iframe3" src="" height="100%" width="100%" frameborder="0"></iframe>
+</div>
+  </div>
+  
+  </div>
+  
+  
+
+
+</div>
+
+
+  
+
+
+  <div class="pusher">
+    
+  </div>
+</body>
+</html>
